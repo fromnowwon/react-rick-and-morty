@@ -1,1 +1,1 @@
-# Rick and Morty
+# Rick and Morty (React + TS + React Query + Zustand)
