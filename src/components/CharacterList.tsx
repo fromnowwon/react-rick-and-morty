@@ -2,6 +2,7 @@ import { useCharacters } from "../hooks/useCharacters";
 import { Character } from "../types/CharacterTypes";
 import CharacterCard from "./CharacterCard";
 import { Skeleton } from "./ui/skeleton";
+import Pagination from "../components/Pagination";
 
 export default function CharacterList() {
   const { data, status } = useCharacters();
@@ -30,15 +31,18 @@ export default function CharacterList() {
     );
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {data.results.map((character: Character, index: number) => (
-        <CharacterCard
-          key={character.id}
-          character={character}
-          index={index}
-          status={status}
-        />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {data.results.map((character: Character, index: number) => (
+          <CharacterCard
+            key={character.id}
+            character={character}
+            index={index}
+            status={status}
+          />
+        ))}
+      </div>
+      <Pagination />
+    </>
   );
 }

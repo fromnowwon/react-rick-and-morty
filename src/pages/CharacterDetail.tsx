@@ -8,7 +8,7 @@ export default function CharacterDetail() {
 
   if (status === "loading")
     return (
-      <div className="container mx-auto">
+      <div className="container mx-auto py-6 h-screen">
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="max-w-md rounded overflow-hidden shadow-lg">
             <Skeleton className="w-full h-100" />
@@ -29,7 +29,7 @@ export default function CharacterDetail() {
     );
 
   return (
-    <section className="container mx-auto py-6">
+    <section className="container mx-auto h-screen py-6">
       <div className="flex flex-col sm:flex-row gap-6">
         <div className="max-w-md rounded overflow-hidden shadow-lg">
           <img
