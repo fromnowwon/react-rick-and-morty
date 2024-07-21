@@ -22,24 +22,40 @@ export default function CharacterDetail() {
         </div>
       </div>
     );
-  if (status === "error") return <div>Error!</div>;
+
+  if (status === "error")
+    return (
+      <div className="text-center text-red-500">Error loading character!</div>
+    );
 
   return (
-    <section className="container mx-auto">
-      <div className="flex flex-col sm:flex-row gap-4">
+    <section className="container mx-auto py-6">
+      <div className="flex flex-col sm:flex-row gap-6">
         <div className="max-w-md rounded overflow-hidden shadow-lg">
           <img
-            className="w-full h-100 object-cover"
+            className="w-full h-80 object-cover"
             src={data.image}
             alt={data.name}
           />
         </div>
-        <div>
-          <h2>Name: {data.name || "??"}</h2>
-          <p>Status: {data.status || "??"}</p>
-          <p>Type: {data.type || "??"}</p>
-          <p>Species: {data.species || "??"}</p>
-          <p>Gender: {data.gender || "??"}</p>
+        <div className="flex-1 space-y-4">
+          <h2 className="text-3xl font-bold">{data.name || "??"}</h2>
+          <p className="text-lg">
+            <span className="font-semibold">Status: </span>
+            {data.status || "??"}
+          </p>
+          <p className="text-lg">
+            <span className="font-semibold">Type: </span>
+            {data.type || "??"}
+          </p>
+          <p className="text-lg">
+            <span className="font-semibold">Species: </span>
+            {data.species || "??"}
+          </p>
+          <p className="text-lg">
+            <span className="font-semibold">Gender: </span>
+            {data.gender || "??"}
+          </p>
         </div>
       </div>
     </section>

@@ -24,7 +24,10 @@ export default function CharacterList() {
       </div>
     );
 
-  if (status === "error") return <div>Error!</div>;
+  if (status === "error")
+    return (
+      <div className="text-center text-red-500">Error loading character!</div>
+    );
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
