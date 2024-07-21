@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { useCharacterStore } from "../store/useCharacterStore";
-import { fetchCharacters } from "../util/api";
+import { fetchCharacters } from "../lib/api";
 
 export const useCharacters = () => {
   const { page } = useCharacterStore();
