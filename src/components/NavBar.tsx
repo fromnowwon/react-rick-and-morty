@@ -7,7 +7,7 @@ export default function NavBar() {
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <Link
           to="/"
-          className="text-2xl font-bold text-gray-900 dark:text-white"
+          className="text-2xl font-bold text-primary dark:text-white"
         >
           Rick and Morty
         </Link>

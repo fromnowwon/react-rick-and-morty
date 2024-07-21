@@ -20,7 +20,7 @@ export default function CharacterCard({
   return (
     <Link
       to={`/character/${character.id}`}
-      className="group cursor-pointer sm:hover:shadow-slate-300 sm:shadow-md sm:border sm:border-slate-200 sm:m-3 transition-all hover:scale-105 transform duration-300"
+      className="group cursor-pointer dark:bg-primary sm:hover:shadow-slate-300 sm:shadow-md sm:border sm:border-slate-200 sm:m-3 transition-all hover:scale-105 transform duration-300"
     >
       <MotionDiv
         variants={variants}

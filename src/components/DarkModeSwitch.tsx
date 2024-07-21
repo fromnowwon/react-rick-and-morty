@@ -29,7 +29,7 @@ export default function DarkModeSwitch() {
   return (
     <button
       onClick={toggleDarkMode}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none"
+      className="p-2 rounded-full focus:outline-none text-primary hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-white transition-colors"
     >
       {isDarkMode ? <MdDarkMode /> : <MdLightMode />}
     </button>
