@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Character } from "../types/CharacterTypes";
 import { MotionDiv } from "./MotionDiv";
 
@@ -17,7 +18,10 @@ export default function CharacterCard({
   index,
 }: CharacterCardProps) {
   return (
-    <>
+    <Link
+      to={`/character/${character.id}`}
+      className="group cursor-pointer sm:hover:shadow-slate-300 sm:shadow-md sm:border sm:border-slate-200 sm:m-3 transition-all hover:scale-105 transform duration-300"
+    >
       <MotionDiv
         variants={variants}
         initial="hidden"
@@ -27,7 +31,6 @@ export default function CharacterCard({
           delay: index * 0.1,
           duration: 0.25,
         }}
-        className="group cursor-pointer sm:hover:shadow-slate-300 sm:shadow-md sm:border sm:border-slate-200 sm:m-3 transition-all hover:scale-105 transform duration-300"
       >
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
           <img
@@ -41,6 +44,6 @@ export default function CharacterCard({
           </div>
         </div>
       </MotionDiv>
-    </>
+    </Link>
   );
 }
