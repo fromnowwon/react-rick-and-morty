@@ -33,13 +33,26 @@ export default function CharacterCard({
         }}
       >
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
-          <img
-            className="w-full h-52 object-cover"
-            src={character.image}
-            alt={character.name}
-          />
+          <div className="h-60">
+            <img
+              className="w-full h-full object-cover"
+              src={character.image}
+              alt={character.name}
+            />
+          </div>
           <div className="flex flex-col justify-center h-20 px-3">
-            <p className="font-bold text-xl mb-1 truncate">{character.name}</p>
+            <p className="font-bold text-xl mb-1 truncate">
+              {character.status === "Alive" && (
+                <span className="inline-block mr-2 rounded-full w-3 h-3 bg-green-500"></span>
+              )}
+              {character.status === "Dead" && (
+                <span className="inline-block mr-2 rounded-full w-3 h-3 bg-red-500"></span>
+              )}
+              {character.status === "unknown" && (
+                <span className="inline-block mr-2 rounded-full w-3 h-3 bg-gray-300"></span>
+              )}
+              {character.name}
+            </p>
             <p className="text-sm">{character.species}</p>
           </div>
         </div>
