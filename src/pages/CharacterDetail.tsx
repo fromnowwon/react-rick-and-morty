@@ -4,9 +4,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function CharacterDetail() {
   const { id } = useParams<{ id: string }>();
-  const { data, status } = useCharacterDetail(id);
+  const { data, error, isLoading } = useCharacterDetail(id);
 
-  if (status === "loading")
+  if (isLoading)
     return (
       <div className="container mx-auto py-6">
         <div className="flex flex-col items-center gap-6">
@@ -27,7 +27,7 @@ export default function CharacterDetail() {
       </div>
     );
 
-  if (status === "error")
+  if (error)
     return (
       <div className="text-center text-red-500">Error loading character!</div>
     );

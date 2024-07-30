@@ -5,9 +5,9 @@ import { Skeleton } from "./ui/skeleton";
 import Pagination from "../components/Pagination";
 
 export default function CharacterList() {
-  const { data, status } = useCharacters();
+  const { data, error, isLoading } = useCharacters();
 
-  if (status === "loading")
+  if (isLoading)
     return (
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {Array.from({ length: 8 }).map((_, index) => (
@@ -25,7 +25,7 @@ export default function CharacterList() {
       </div>
     );
 
-  if (status === "error")
+  if (error)
     return (
       <div className="text-center text-red-500">Error loading character!</div>
     );
